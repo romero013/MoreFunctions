@@ -38,12 +38,7 @@ int sum(int num1, int num2) {
 template <typename T> T newSum(T num1, T num2) { // шаблонная функция
 	return num1 + num2;
 }
-template <typename T> void showArray(T array[], int length) {
-	cout << "[";
-	for (int i = 0; i < length; i++)
-		cout << array[i] << ", ";
-	cout << "\b\b]\n";
-}
+template <typename T> void showArray(T array[], int length);
 
 
 int main() {
@@ -56,6 +51,8 @@ int main() {
 	showArray(a1, 5);
 	cout << "Массив double:\n";
 	showArray(a2, 4);
+	cout << "Массив int:\n";
+	showArray(a1, 5);
 
 
 	// Вызов шаблонной функции
@@ -80,4 +77,10 @@ int main() {
 
 
 	return 0;
+}
+template <typename T> void showArray(T array[], int length) {
+	cout << "[";
+	for (int i = 0; i < length; i++)
+		cout << array[i] << ", ";
+	cout << "\b\b]\n";
 }
